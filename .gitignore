@@ -1,0 +1,9 @@
+target/
+.idea/
+*.iml
+.vscode/
+db.properties
+src/main/resources/db.properties
+*.log
+Thumbs.db
+

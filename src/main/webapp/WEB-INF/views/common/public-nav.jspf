@@ -1,0 +1,10 @@
+<nav class="public-nav navbar navbar-expand-lg py-3">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="${ctx}/home"><span class="brand-mark">EF</span><span class="brand-word">EventFlow</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#publicNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="publicNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="${ctx}/events">Discover events</a></li>
+            <c:choose><c:when test="${not empty sessionScope.currentUser}"><li class="nav-item"><a class="btn btn-primary btn-sm px-3" href="${ctx}/${sessionScope.currentUser.role == 'ADMIN' ? 'admin/dashboard' : sessionScope.currentUser.role == 'ORGANIZER' ? 'organizer/dashboard' : 'attendee/dashboard'}">Open workspace</a></li></c:when><c:otherwise><li class="nav-item"><a class="nav-link" href="${ctx}/login">Sign in</a></li><li class="nav-item"><a class="btn btn-primary btn-sm px-3" href="${ctx}/register">Create account</a></li></c:otherwise></c:choose>
+        </ul></div>
+    </div>
+</nav>
