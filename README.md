@@ -112,14 +112,4 @@ Never use these credentials outside a local demo environment.
 - SQL uses prepared statements inside DAO implementations.
 - Ticket purchase stock updates and order creation run inside a JDBC transaction.
 
-## Known setup note
 
-The implementation can be inspected without Java installed, but Maven packaging and Tomcat verification require the prerequisites above. Track verification progress in [PROJECT_PROGRESS.md](PROJECT_PROGRESS.md).
-
-## Documentation
-
-- [CONTEXT.md](CONTEXT.md) — source requirements and constraints
-- [FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md) — project organization guide
-- [PROJECT_PROGRESS.md](PROJECT_PROGRESS.md) — phase/task/subtask tracker
-- [docs/database-schema.sql](docs/database-schema.sql) — schema
-- [docs/sample-data.sql](docs/sample-data.sql) — demo data
