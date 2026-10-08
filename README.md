@@ -21,6 +21,33 @@ It intentionally uses the project rubric's visible architecture:
 | Organizer | Create events, manage tickets, inspect attendees, broadcast updates |
 | Attendee | Discover events, register, purchase simulated tickets, view updates/history/profile |
 
+## Application use-case diagram
+
+The three roles work together through the event lifecycle: organizers prepare events, admins approve them, and attendees discover and join approved events.
+
+```mermaid
+flowchart LR
+    organizer[Organizer] --> createEvent[Create event]
+    organizer --> manageTickets[Add and manage tickets]
+    organizer --> reviewAttendees[Review registrations]
+    organizer --> sendUpdates[Send attendee updates]
+
+    admin[Admin] --> manageUsers[Manage users]
+    admin --> reviewEvent[Approve or reject event]
+    admin --> inspectActivity[Inspect activity]
+    admin --> settings[Manage settings]
+
+    attendee[Attendee] --> discover[Discover approved events]
+    attendee --> register[Register for event]
+    attendee --> purchase[Purchase simulated ticket]
+    attendee --> viewUpdates[View updates, history, and profile]
+
+    createEvent --> reviewEvent
+    reviewEvent -->|Approved| discover
+    register --> reviewAttendees
+    sendUpdates --> viewUpdates
+```
+
 ## Project structure
 
 The application is one Maven WAR project. The request flow is:
@@ -109,5 +136,4 @@ Never use these credentials outside a local demo environment.
 - Only approved events are publicly registrable or purchasable.
 - SQL uses prepared statements inside DAO implementations.
 - Ticket purchase stock updates and order creation run inside a JDBC transaction.
-
 
