@@ -29,8 +29,6 @@ The application is one Maven WAR project. The request flow is:
 JSP → Servlet → Service → DAO → JDBC/MySQL
 ```
 
-See [FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md) for the folder responsibilities and feature workflow.
-
 ## Prerequisites
 
 - JDK 17 or newer
